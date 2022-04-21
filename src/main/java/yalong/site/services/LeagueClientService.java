@@ -86,7 +86,7 @@ public class LeagueClientService {
         //根据puuid查最近几次的战绩
         for (String id : puuidList) {
             //查询战绩
-            List<ScoreBO> scoreBOList = api.getScoreById(id, 3);
+            List<ScoreBO> scoreBOList = api.getScoreById(id, 20);
             //战绩
             StringBuilder scoreBuilder = new StringBuilder();
             for (ScoreBO scoreBO : scoreBOList) {
@@ -152,15 +152,8 @@ public class LeagueClientService {
                 if (!roomMessageSend && GlobalData.autoSend) {
                     try {
                         //获取房间号
-                        String roomInfo = api.getRoomGameInfo();
-                        Matcher matcher = roomIdPattern.matcher(roomInfo);
-                        String roomId;
-                        if (matcher.find()) {
-                            roomId = matcher.group(1);
-                        } else {
-                            break;
-                        }
-                        ArrayList<String> summonerIdList = api.getRoomSummonerId(roomId);
+                        String lobbyid = api.getRoomInfo();
+                        ArrayList<String> summonerIdList = api.getRoomSummonerId(lobbyid);
                         //可能队友还没进入房间
                         if (summonerIdList.size() != 5) {
                             break;
@@ -179,7 +172,7 @@ public class LeagueClientService {
                         ArrayList<String> msg = this.dealScore2Msg(strings);
                         if (msg != null) {
                             for (String s : msg) {
-                                api.msg2Room(roomId, s);
+                                api.msg2Room(lobbyid, s);
                             }
                             roomMessageSend = true;
                         }

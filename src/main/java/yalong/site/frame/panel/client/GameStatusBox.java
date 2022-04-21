@@ -50,7 +50,7 @@ public class GameStatusBox extends BaseComboBox<ItemBO> {
         GameStatusBox box = new GameStatusBox();
         GridBagConstraints grid = new GridBagConstraints(
                 // 第(0,2)个格子
-                0, 2,
+                1, 1,
                 // 占1列,占1行
                 1, 1,
                 //横向占100%长度,纵向占100%长度

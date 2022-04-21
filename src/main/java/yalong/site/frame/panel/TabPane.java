@@ -30,7 +30,7 @@ public class TabPane extends JTabbedPane {
         TabPane tabPane = new TabPane();
         tabPane.add(ClientPanel.builder());
         tabPane.add(ResultPanel.builder());
-        tabPane.add(AboutPanel.builder());
+//        tabPane.add(AboutPanel.builder());
         return tabPane;
     }
 

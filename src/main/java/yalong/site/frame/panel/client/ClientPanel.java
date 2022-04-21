@@ -31,18 +31,18 @@ public class ClientPanel extends BasePanel {
         //第二行三个
         ComponentBO checkBox = AutoAcceptCheckBox.builder();
         clientPanel.add(checkBox.getComp(), checkBox.getConstraints());
-        ComponentBO reconnectCheckBox = AutoReconnectCheckBox.builder();
-        clientPanel.add(reconnectCheckBox.getComp(), reconnectCheckBox.getConstraints());
+//        ComponentBO reconnectCheckBox = AutoReconnectCheckBox.builder();
+//        clientPanel.add(reconnectCheckBox.getComp(), reconnectCheckBox.getConstraints());
         ComponentBO sendCheckBox = AutoSendCheckBox.builder();
         clientPanel.add(sendCheckBox.getComp(), sendCheckBox.getConstraints());
 
         //第三行3个
         ComponentBO gameStatusBox = GameStatusBox.builder();
         clientPanel.add(gameStatusBox.getComp(), gameStatusBox.getConstraints());
-        ComponentBO leaveBox = LeaveCheckBox.builder();
-        clientPanel.add(leaveBox.getComp(), leaveBox.getConstraints());
-        ComponentBO moyanBox = MoyanCheckBox.builder();
-        clientPanel.add(moyanBox.getComp(), moyanBox.getConstraints());
+//        ComponentBO leaveBox = LeaveCheckBox.builder();
+//        clientPanel.add(leaveBox.getComp(), leaveBox.getConstraints());
+//        ComponentBO moyanBox = MoyanCheckBox.builder();
+//        clientPanel.add(moyanBox.getComp(), moyanBox.getConstraints());
 
         return clientPanel;
 

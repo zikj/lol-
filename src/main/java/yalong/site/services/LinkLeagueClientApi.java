@@ -184,9 +184,15 @@ public class LinkLeagueClientApi {
         return arrayList;
     }
 
-    public void getRoomInfo() throws IOException {
+    /**
+     * 获取房间id
+     */
+    public String getRoomInfo() throws IOException {
         String resp = requestUtil.doGet("/lol-chat/v1/conversations");
-        System.out.println(resp);
+        String lobby =resp.split(":")[3].split(",")[0];
+        String lobbyId = lobby.substring(1,lobby.length()-1);
+        System.out.println(lobbyId);
+        return lobbyId;
     }
 
     /**
@@ -257,6 +263,19 @@ public class LinkLeagueClientApi {
         }
         return collect;
     }
+
+//    /**
+//     * 通过玩家puuid查询近几把战绩
+//     *
+//     * @param id       玩家信息中的puuid
+//     * @param endIndex 局数
+//     */
+//    public JSONObject getScoreByIdc(String id, int endIndex) throws IOException {
+//        String endpoint = "/lol-match-history/v1/products/lol/" + id + "/matches?begIndex=0&endIndex=" + endIndex;
+//        String resp = requestUtil.doGet(endpoint);
+//        JSONObject jsonObject = JSON.parseObject(resp);
+//       return jsonObject;
+//    }
 
     /**
      * 查看游戏当前状态
