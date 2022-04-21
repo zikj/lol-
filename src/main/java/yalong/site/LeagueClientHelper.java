@@ -5,7 +5,6 @@ import yalong.site.frame.MainFrame;
 import yalong.site.services.LeagueClientService;
 
 /**
- * @author yaLong
  */
 public class LeagueClientHelper {
 
