@@ -6,8 +6,6 @@ import lombok.Data;
 /**
  * 当前段位选择
  *
- * @author yaLong
- * @date 2022/2/14
  */
 @Data
 @AllArgsConstructor
