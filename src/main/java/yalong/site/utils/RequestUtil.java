@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * 网络请求工具
  *
- * @author yaLong
  */
 @Data
 public class RequestUtil {

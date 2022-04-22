@@ -152,7 +152,7 @@ public class LeagueClientService {
                 if (!roomMessageSend && GlobalData.autoSend) {
                     try {
                         //获取房间号
-                        String lobbyid = api.getRoomInfo();
+                        String lobbyid = api.getRoomGameInfo();
                         ArrayList<String> summonerIdList = api.getRoomSummonerId(lobbyid);
                         //可能队友还没进入房间
                         if (summonerIdList.size() != 5) {

@@ -44,13 +44,14 @@ public class LeagueClientHelper {
 //        LeagueClientBO leagueClientBO = getClientProcess();
 //        RequestUtil requestUtil = new RequestUtil(leagueClientBO);
 //        LinkLeagueClientApi api = new LinkLeagueClientApi(requestUtil);
-//        LeagueClientService service =new LeagueClientService();
-//        String lobbyId = api.getRoomInfo();
+//        LeagueClientService service = new LeagueClientService();
+//        String lobbyId = api.getRoomGameInfo();
+//        System.out.println("房间id:"+lobbyId);
 //        //获取选英雄房间信息  处理过后拿到队友的summonerid
-//        ArrayList<String> summonerIdList=api.getRoomSummonerId(lobbyId);
+//        ArrayList<String> summonerIdList = api.getRoomSummonerId(lobbyId);
 //        //打印出队友的puuid
-//        for (String id:summonerIdList){
-//            System.out.println(id);
+//        for (String id : summonerIdList) {
+//            System.out.println("用户id"+id);
 //        }
 //        ArrayList<String> strings = new ArrayList<>();
 //        for (String id : summonerIdList) {
@@ -59,14 +60,17 @@ public class LeagueClientHelper {
 //            strings.add(puuid);
 //        }
 //        //查询到每个人的战绩并处理，返回需要发送的消息列表
- //       ArrayList<String> msgs=service.dealScore2Msg(strings);
-//        for(String msg:msgs){
+//        ArrayList<String> msgs = service.dealScore2Msg(strings);
+//        for (String msg : msgs) {
 //            //发送消息到英雄选择页面
-//            api.msg2Room(lobbyId,msg);
+//            api.msg2Room(lobbyId, msg);
 //        }
+//    }
+//}
 //        String puuid =api.getInfoBySummonerId("2929100794").getPuuid();
 //        System.out.println(api.getScoreByIdc(puuid, 1));
-//        String msg = api.msg2Room()
+//        String msg = api.msg2Room();
+
 
 
 

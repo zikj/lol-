@@ -16,8 +16,8 @@ import java.util.regex.Pattern;
 public class ProcessUtil {
     public static Pattern appPortPattern = Pattern.compile("--app-port=(\\d+)");
     public static Pattern tokenPattern = Pattern.compile("--remoting-auth-token=([\\w-]+)");
-//    public static String token = "BN53jZTaesMZB8k_h_vAFQ";
-//    public static String port= "49230";
+    public static String token = "jVs8-5t0EWBW0ubDO5KJ_w";
+    public static String port= "56242";
 
     /**
      * 通过进程名查询出进程的启动命令,解析出需要的客户端token和端口
@@ -28,24 +28,24 @@ public class ProcessUtil {
         Process process = null;
         LeagueClientBO leagueClientBO = new LeagueClientBO();
         try {
-            process = Runtime.getRuntime().exec(cmd);
-            // windows 命令必须gbk编码
-            reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "gb2312"));
-            String line;
-
-            while ((line = reader.readLine()) != null) {
-                Matcher appPortMatcher = appPortPattern.matcher(line);
-                Matcher tokenPatternMatcher = tokenPattern.matcher(line);
-                if (tokenPatternMatcher.find()) {
-                    leagueClientBO.setToken(tokenPatternMatcher.group(1));
-                }
-                if (appPortMatcher.find()) {
-                    leagueClientBO.setPort(appPortMatcher.group(1));
-                }
-
-            }
-//            leagueClientBO.setToken(token);
-//            leagueClientBO.setPort(port);
+//            process = Runtime.getRuntime().exec(cmd);
+//            // windows 命令必须gbk编码
+//            reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "gb2312"));
+//            String line;
+//
+//            while ((line = reader.readLine()) != null) {
+//                Matcher appPortMatcher = appPortPattern.matcher(line);
+//                Matcher tokenPatternMatcher = tokenPattern.matcher(line);
+//                if (tokenPatternMatcher.find()) {
+//                    leagueClientBO.setToken(tokenPatternMatcher.group(1));
+//                }
+//                if (appPortMatcher.find()) {
+//                    leagueClientBO.setPort(appPortMatcher.group(1));
+//                }
+//
+//            }
+            leagueClientBO.setToken(token);
+            leagueClientBO.setPort(port);
             return leagueClientBO;
         } finally {
             if (reader != null) {

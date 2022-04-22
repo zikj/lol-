@@ -185,21 +185,30 @@ public class LinkLeagueClientApi {
     }
 
     /**
-     * 获取房间id
+     * 获取最近一次会话
      */
     public String getRoomInfo() throws IOException {
         String resp = requestUtil.doGet("/lol-chat/v1/conversations");
+        System.out.println(resp);
         String lobby =resp.split(":")[3].split(",")[0];
         String lobbyId = lobby.substring(1,lobby.length()-1);
+        System.out.println(resp);
         System.out.println(lobbyId);
         return lobbyId;
     }
 
     /**
-     * 获取组队房间的信息
+     * 获取房间id
      */
     public String getRoomGameInfo() throws IOException {
-        return requestUtil.doGet("/lol-champ-select/v1/session");
+      String resp = requestUtil.doGet("/lol-champ-select/v1/session");
+
+        JSONObject  lobby = JSON.parseObject(resp);
+
+       String a =  lobby.getJSONObject("chatDetails").toJSONString().split(":")[1].split("@")[0];
+        String lobbyid = a.substring(1,a.length());
+
+        return lobbyid;
     }
 
     /**

@@ -8,16 +8,14 @@ import java.awt.*;
 
 /**
  * 主窗体
- *
- * @author yaLong
- * @date 2022/2/11
+
  */
 public class MainFrame extends JFrame {
     private static MainFrame frame;
 
     public MainFrame() throws HeadlessException {
         super();
-        this.setTitle("lol-helper");
+        this.setTitle("牛马生成器");
         Image image = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/assets/logo.png"));
         this.setIconImage(image);
         //退出直接关闭程序
