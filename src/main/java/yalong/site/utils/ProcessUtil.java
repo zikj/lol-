@@ -28,24 +28,24 @@ public class ProcessUtil {
         Process process = null;
         LeagueClientBO leagueClientBO = new LeagueClientBO();
         try {
-//            process = Runtime.getRuntime().exec(cmd);
-//            // windows 命令必须gbk编码
-//            reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "gb2312"));
-//            String line;
-//
-//            while ((line = reader.readLine()) != null) {
-//                Matcher appPortMatcher = appPortPattern.matcher(line);
-//                Matcher tokenPatternMatcher = tokenPattern.matcher(line);
-//                if (tokenPatternMatcher.find()) {
-//                    leagueClientBO.setToken(tokenPatternMatcher.group(1));
-//                }
-//                if (appPortMatcher.find()) {
-//                    leagueClientBO.setPort(appPortMatcher.group(1));
-//                }
-//
-//            }
-            leagueClientBO.setToken(token);
-            leagueClientBO.setPort(port);
+            process = Runtime.getRuntime().exec(cmd);
+            // windows 命令必须gbk编码
+            reader = new BufferedReader(new InputStreamReader(process.getInputStream(), "gb2312"));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                Matcher appPortMatcher = appPortPattern.matcher(line);
+                Matcher tokenPatternMatcher = tokenPattern.matcher(line);
+                if (tokenPatternMatcher.find()) {
+                    leagueClientBO.setToken(tokenPatternMatcher.group(1));
+                }
+                if (appPortMatcher.find()) {
+                    leagueClientBO.setPort(appPortMatcher.group(1));
+                }
+
+            }
+//            leagueClientBO.setToken(token);
+//            leagueClientBO.setPort(port);
             return leagueClientBO;
         } finally {
             if (reader != null) {
